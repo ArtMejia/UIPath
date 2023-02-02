@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1167,3503" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1167,3617" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="82">
       <x:String>System.Activities</x:String>
@@ -101,15 +101,12 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="976,3438" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="976,3552" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="ProjectPath">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\genes\OneDrive\Desktop\Project</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\genes\OneDrive\Desktop\Project" Name="ProjectPath" />
       <Variable x:TypeArguments="x:String" Name="Now" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -125,25 +122,25 @@
         <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyyMMddHHmmss")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="914,3206" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="914,3186" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="880,3110" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="880,3090" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="818,2988" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[ProjectPath + &quot;\Input\ProductsToBeScraped.xlsx&quot;]">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="818,2968" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[ProjectPath + &quot;\Input\ProductsToBeScraped.xlsx&quot;]">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="784,2706" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="784,2690" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="Products" />
                     </Sequence.Variables>
@@ -152,26 +149,26 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="722,180" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Products2&quot;)]" SaveTo="[Products]" />
-                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: JD Sports Global | Shop Online Now" sap:VirtualizedContainerService.HintSize="722,2364" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="40441acf-e4a2-47ad-9e5e-cb7efdb4ba06" Version="V2">
+                    <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="722,178" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Products2&quot;)]" SaveTo="[Products]" />
+                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: JD Sports Global | Shop Online Now" sap:VirtualizedContainerService.HintSize="722,2350" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="40441acf-e4a2-47ad-9e5e-cb7efdb4ba06" Version="V2">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,2137" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,2124" sap2010:WorkflowViewState.IdRef="Sequence_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Products]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="626,2013" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Products]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="626,2000" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                               <ui:ForEachRow.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1886" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1874" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
                                     </Sequence.Variables>
@@ -180,12 +177,12 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search Field'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,228" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="40441acf-e4a2-47ad-9e5e-cb7efdb4ba06" Text="[CurrentRow.Item(&quot;Product&quot;).ToString + &quot;[k(enter)]&quot;]" Version="V3">
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search Field'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,227" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="40441acf-e4a2-47ad-9e5e-cb7efdb4ba06" Text="[CurrentRow.Item(&quot;Product&quot;).ToString + &quot;[k(enter)]&quot;]" Version="V3">
                                       <uix:NTypeInto.Target>
                                         <uix:TargetAnchorable BrowserURL="https://www.global.jdsports.com/" DesignTimeRectangle="986, 151, 311, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT srchInput'" FullSelectorArgument="&lt;webctrl id='srchInput' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='srchInput' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="b47335b0-f558-44a3-8ee9-fd32fe8393a7" ImageBase64="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" InformativeScreenshot="604f4e05fdb5cfebcc0eba8b5d8bc2c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='JD Sports Global | Shop Online Now' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
                                       </uix:NTypeInto.Target>
                                     </uix:NTypeInto>
-                                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='TItle' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Title URL' ReferenceName='Column1'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Price' ReferenceName='Column2'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text' name2='Column1' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="530,167" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="40441acf-e4a2-47ad-9e5e-cb7efdb4ba06" Timeout="10" Version="V3">
+                                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='TItle' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Title URL' ReferenceName='Column1'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Price' ReferenceName='Column2'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text' name2='Column1' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="40441acf-e4a2-47ad-9e5e-cb7efdb4ba06" Timeout="10" Version="V3">
                                       <uix:NExtractData.NextLink>
                                         <uix:TargetAnchorable BrowserURL="https://www.global.jdsports.com/search/Nike+T-Shirt/" DesignTimeRectangle="760, 1000, 36, 36" DesignTimeScaleFactor="1" FriendlyName="'A /search/Nike+T-Shirt/…'" FullSelectorArgument="&lt;webctrl aaname='Next Page' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Next Page' tag='A' type='' class='btn btn-default pageNav' /&gt;" Guid="f0dca56c-2aff-47c1-ba11-6cb6c296efdd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADSSURBVFhH7dhbCoMwEEBR97/RPFyEZYSBML1o0iRqZT7Oh5JMLkIruOSct5TSoRjjbZ4fSEEWbbyKB/bywF7+N9PLA3vtgRZFlmjQLB7Y6z8DLQ888L5AGjJTVaC4I040B4YQvobM9L4neLWffiTltd6bZVnXFaNKNqa81nuzNAcSGjzK8wMpyKIoQgcoWl+iPWJooLKH0BrL7lEeKGiNZfeoqsAzdGArihMeWIvihAfWojixB8rbRNnDBQ0cjeJE1ROkgaNRnMDvg48PVPcHxu0Dhr5FF6JpAOoAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='2 - 5 | Nike T-Shirt' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                                       </uix:NExtractData.NextLink>
@@ -193,8 +190,8 @@
                                         <uix:TargetAnchorable BrowserURL="https://www.global.jdsports.com/search/Nike+T-Shirt/?from=216" DesignTimeRectangle="490, 505, 1190, 10897" DesignTimeScaleFactor="1" ElementType="List" FriendlyName="'UL productListMain'" FullSelectorArgument="&lt;webctrl id='productListMain' tag='UL' /&gt;" Guid="28e94f8e-7934-4760-a3d2-b06bb07ce42e" InformativeScreenshot="9018dce90457a9ec01c5520ce1e7aeb6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='4 - 5 | Nike T-Shirt' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                                       </uix:NExtractData.Target>
                                     </uix:NExtractData>
-                                    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Before" DataTable="[ExtractDataTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="530,198" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
-                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,433" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Before" DataTable="[ExtractDataTable]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="530,195" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,432" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                       <ui:ForEachRow.Body>
                                         <ActivityAction x:TypeArguments="sd:DataRow">
                                           <ActivityAction.Argument>
@@ -226,19 +223,19 @@
                                         </ActivityAction>
                                       </ui:ForEachRow.Body>
                                     </ui:ForEachRow>
-                                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,576" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[ProjectPath + &quot;\Output\&quot; + Now + &quot;_ScrappedData.xlsx&quot;]">
+                                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,570" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[ProjectPath + &quot;\Output\&quot; + Now + &quot;_ScrappedData.xlsx&quot;]">
                                       <ueab:ExcelApplicationCard.Body>
                                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="ExcelResult" />
                                           </ActivityAction.Argument>
-                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,294" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,292" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ueab:WriteRangeX Destination="[ExcelResult.Sheet(CurrentRow.Item(&quot;Product&quot;).ToString)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[ExtractDataTable]" />
+                                            <ueab:WriteRangeX Destination="[ExcelResult.Sheet(CurrentRow.Item(&quot;Product&quot;).ToString)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[ExtractDataTable]" />
                                           </Sequence>
                                         </ActivityAction>
                                       </ueab:ExcelApplicationCard.Body>
@@ -262,5 +259,6 @@
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>
     </ueab:ExcelProcessScopeX>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="914,94" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Complete&quot;]" />
   </Sequence>
 </Activity>
